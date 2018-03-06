@@ -1,23 +1,6 @@
 //Blake Willoughby
 //VS 2017
 
-// READ BEFORE YOU START:
-// Please read the given Word document for the project description with an illustrartive diagram.
-// You are given a partially completed program that creates a list of dogs for an adoption shelter.
-// Each dog has the corresponding information: name, breed, and a linked list of checkups.
-// Please read the instructions above each required function and follow the directions carefully.
-// If you modify any of the given code, return types, or parameters, you risk failing test cases.
-//
-// Note, Textbook Section 2.10 gives a case study on complex linked list operations. 
-// This project is based on that case study. Make sure you read the code in section 2.10.
-
-// The following will be accepted as input in the following format: "name:breed"
-// Example Input:	"Spot:Terrier" or "Daisy:Poodle"
-// Valid name:		String containing alphabetical letters beginning with a capital letter
-// Valid breed:		String containing alphabetical letters beginning with a capital letter
-// Valid date:		String in the following format: "MM/DD/YYYY" ex: "01/01/2010"
-// All input will be a valid length and no more than the allowed number of dogs will be added to the linked list.
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -496,7 +479,7 @@ struct container* list_of_breed(char* breed)
 	struct container *iterator;//iterator for the original list
 	struct container *temp;//new node
 	struct container *breedIterator;//iterator for the breedList
-	struct checkup *checkIterator;//To Iterator the checkList
+	struct checkup *checkIterator;//to iterate the checkList
 	struct checkup *checkList;//New checkList
 	struct checkup *aCheck;
 	struct dog *tempDog = NULL;//temporary dog structure
@@ -600,7 +583,7 @@ struct container* list_by_name()
 	struct container *alphaIterator;//For iterating the alphabetical list
 	struct checkup *checkIterator;//To iterate the checkList of a node in the original list
 	struct checkup *checkList;//new checkList for the new list that will recieve the checkups from the existing list
-	struct checkup *tempCheck = NULL;//For transferring datat between lists
+	struct checkup *tempCheck = NULL;//For transferring data between lists
 	struct dog *tempDog = NULL;//For transferring data between lists
 	//memory allocation
 	checkIterator = (struct checkup *)malloc(sizeof(struct checkup));
@@ -685,18 +668,16 @@ struct container* list_by_name()
 						follower->next = temp;
 						
 						break;//exit loop
-					}
+					}//if
 					else {
 						
 						//repoint follower and iterate alphaIterator
 						follower = alphaIterator;
 						alphaIterator = alphaIterator->next;
-					}
+					}//else
 				}//while
 				follower->next = temp;
-				
-				
-			}
+			}//else
 		}//else
 		iterator = iterator->next;//iterate original list
 	}//while
